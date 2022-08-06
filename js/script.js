@@ -7,6 +7,8 @@ var elLiBike = elScoreList.querySelector(".result-item-bike");
 var elLiCar = elScoreList.querySelector(".result-item-car");
 var elLiTrain = elScoreList.querySelector(".result-item-train");
 
+var minValue = 0;
+
 var footSpeed = 10;
 var bikeSpeed = 20;
 var carSpeed = 60;
@@ -23,8 +25,12 @@ elForm.addEventListener("submit", function(evt){
   var carTime = (elInputValue / carSpeed).toFixed(1);
   var trainTime = (elInputValue / trainSpeed).toFixed(1);
 
-  document.querySelector(".result-item-foot").textContent = `${footTime} hours`;
-  document.querySelector(".result-item-bike").textContent = `${bikeTime} hours`;
-  document.querySelector(".result-item-car").textContent = `${carTime} hours`;
-  document.querySelector(".result-item-train").textContent = `${trainTime} hours`;
+  if (elInputValue <= minValue) {
+    alert("Add positive numbers!")
+  } else {
+    document.querySelector(".result-item-foot").textContent = `${footTime} hours`;
+    document.querySelector(".result-item-bike").textContent = `${bikeTime} hours`;
+    document.querySelector(".result-item-car").textContent = `${carTime} hours`;
+    document.querySelector(".result-item-train").textContent = `${trainTime} hours`;
+  }
 })
