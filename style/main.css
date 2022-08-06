@@ -1,0 +1,9 @@
+.result-item {
+  transition: 0.3s ease;
+  padding-top: 7px;
+  height: 80px;
+}
+
+.result-item:hover {
+  transform: scale(1.3);
+}
